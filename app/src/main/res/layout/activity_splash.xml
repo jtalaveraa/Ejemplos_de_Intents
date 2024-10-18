@@ -7,12 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".splash">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animacion"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        app:lottie_rawRes="@raw/fue"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toTopOf="@id/countdownTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </com.airbnb.lottie.LottieAnimationView>
     <TextView
         android:id="@+id/countdownTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Segundos restantes para entrar: 5"
         android:textSize="24dp"
+        android:fontFamily="sans-serif-black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

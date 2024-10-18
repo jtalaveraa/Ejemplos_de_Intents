@@ -5,36 +5,32 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity"
-    android:background="#E1BEE7"
-    >
-
+    tools:context=".Third"
+    android:background="#000000">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ACTIVITY DE EJEMPLO 1 Y 2"
+        android:text="ACTIVITY DE EJEMPLO 3"
         android:fontFamily="sans-serif-black"
         android:textSize="30dp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/text_view_message"/>
-
-    <TextView
-        android:id="@+id/text_view_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:text="Mensaje recibido"
-        android:fontFamily="sans-serif-black"
-        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias=".1"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:lottie_rawRes="@raw/drag"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-
+        app:layout_constraintEnd_toEndOf="parent">
+    </com.airbnb.lottie.LottieAnimationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

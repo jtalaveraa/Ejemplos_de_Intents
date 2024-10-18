@@ -47,12 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent); // Iniciar la nueva Activity
             }
         });
-        // Devolver un resultado de otra activity
-        Button buttonExample3 = findViewById(R.id.ejemplo3_ex);
-        buttonExample3.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            startActivityForResult(intent, 1);  // requestCode = 1
+
+        Button buttonExample2 = findViewById(R.id.ejemplo3_ex);
+        buttonExample2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Third.class);
+            startActivity(intent);
         });
+
 
 
         // IMPLICITOS
@@ -81,17 +82,9 @@ public class MainActivity extends AppCompatActivity {
         ejemplo3_im.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_TEXT, "Este es un mensaje de ejemplo para compartir.");
+            intent.putExtra(Intent.EXTRA_TEXT, "Ejmplo 2 de intents implicitos.");
             startActivity(Intent.createChooser(intent, "Compartir vía"));
         });
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK) {
-            String result = data.getStringExtra("result_key");
-            TextView resultTextView = findViewById(R.id.text_view_result);
-            resultTextView.setText(result);
-        }
-    }
+
 }
